@@ -1,3 +1,19 @@
-const TextEditor = (): JSX.Element => <div className="flex min-h-screen flex-col items-center justify-center py-2">TEXT EDITOR</div>;
+import * as React from "react";
+import { useState, useMemo } from "react";
+import { createEditor } from "slate";
+import { Editable, Slate, withReact } from "slate-react";
+import { Descendant } from 'slate'
+
+const TextEditor = () => {
+  const editor = useMemo(() => withReact(createEditor() as any), []);
+  // Add the initial value when setting up our state.
+  const [value, setValue] = React.useState<Descendant[]>([{ children: [{ text: "This is the inital value of this text field" }] }]);
+
+  return (
+    <Slate editor={editor} value={value} onChange={value => setValue(value)}>
+      <Editable />
+    </Slate>
+  );
+};
 
 export default TextEditor;

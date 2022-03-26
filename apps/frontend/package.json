@@ -9,9 +9,12 @@
     "test": "echo \"Next-app tests\""
   },
   "dependencies": {
+    "@types/slate": "^0.47.11",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "slate": "^0.76.0",
+    "slate-react": "^0.76.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
